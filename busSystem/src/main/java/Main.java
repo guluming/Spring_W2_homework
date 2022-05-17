@@ -5,6 +5,7 @@ public class Main {
         bus1.setSpeed(1, 5);
         bus1.setState(11, Bus.StateType.R);
         bus1.setState(19, Bus.StateType.P);
+        bus1.takePassenger(Bus.StateType.P);
 
 
         System.out.println(bus1.busNum +"/"+bus1.state+"/"+ bus1.passenger +"/"+ bus1.maxPassenger +"/"+ bus1.fuel +"/"+ bus1.speed +"/"+ bus1.fare);
