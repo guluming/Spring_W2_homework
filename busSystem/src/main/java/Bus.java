@@ -46,7 +46,6 @@ class Bus {
 
     public void setSpeed(int fuel, int speed){
         if(fuel>=10){
-
             if(speed>=0){
                 this.speed += speed;
                 System.out.println("speed up");
@@ -55,7 +54,6 @@ class Bus {
                 System.out.println("speed down");
             }
         } else {
-
             System.out.println("plz cheak fuel");
         }
         this.fuel = fuel;
@@ -74,10 +72,4 @@ class Bus {
             System.out.println("BUS is not race");
         }
    }
-//    public enum busState {
-//        RACE(1), PARK(2);
-//        private final int value;
-//        busState(int value) {this.value = value;}
-//        public int getValue(){return value;}
-//    }
 }
