@@ -1,4 +1,4 @@
- import TaxiStateenumpkg.StateType;
+import TaxiStateenumpkg.StateType;
 class Taxi {
     int taxiNumber;
     int fuel;
