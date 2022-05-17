@@ -1,35 +1,52 @@
 class Bus {
     int busNum;
-    String state;
+    StateType state;
     int passenger;
     int maxPassenger;
-    int Fuel;
+    int fuel;
     int speed;
     int fare;
 
-    public Bus(int busNum, String state, int passenger, int maxPassenger, int Fuel, int speed, int fare) {
+    public Bus(int busNum, StateType state, int passenger, int maxPassenger, int fuel, int speed, int fare) {
         this.busNum = busNum;
         this.state = state;
         this.passenger = passenger;
         this.maxPassenger = maxPassenger;
-        this.Fuel = Fuel;
+        this.fuel = fuel;
         this.speed = speed;
         this.fare = fare;
     }
 
+    enum StateType {
+        R("RACE"), P("PARKING");
+        final private String name;
+        public String getName() {
+            return name;
+            }
+        private StateType(String name){
+            this.name = name;
+            }
+    }
+
     public Bus(int busNum) {
-        this(busNum, "race", 0, 10, 0, 0, 500);
+        this(busNum, StateType.R, 0, 10, 0, 0, 500);
     }
 
-    void setState(int fuel, String state){
-        this.state = "race";
-        if(!state.equals("race")){this.state = "parking";}
-        if(fuel<10){this.state = "parking"; System.out.println("Bus need fuel");}
+    public void setState(int fuel, StateType state){
+        this.state = StateType.R;
+        if(!state.equals(StateType.R)){
+            this.state = StateType.P;
+        }
+        if(fuel<10){
+            this.state = StateType.P;
+            System.out.println("Bus need fuel");
+        }
+        this.fuel = fuel;
     }
 
-    void setSpeed(int fuel, int speed){
+    public void setSpeed(int fuel, int speed){
         if(fuel>=10){
-            this.Fuel = fuel;
+
             if(speed>=0){
                 this.speed += speed;
                 System.out.println("speed up");
@@ -38,21 +55,21 @@ class Bus {
                 System.out.println("speed down");
             }
         } else {
-            this.Fuel = fuel;
+
             System.out.println("plz cheak fuel");
         }
-
+        this.fuel = fuel;
     }
 
-   void takePassenger(String state){
-        if(state.equals("race")){
+   public void takePassenger(StateType state){
+        if(state.equals(StateType.R)){
             this.state = state;
             this.passenger++;
             if(passenger>maxPassenger){
                 this.passenger--;
                 System.out.println("passenger is full");}
         } else {
-            this.state = "parking";
+            this.state = StateType.P;
             this.passenger = 0;
             System.out.println("BUS is not race");
         }
