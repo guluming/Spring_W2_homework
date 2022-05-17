@@ -17,7 +17,7 @@ class Bus {
         this.fare = fare;
     }
 
-    enum StateType {
+    enum StateType{
         R("RACE"), P("PARKING");
         final private String name;
         public String getName() {
@@ -69,7 +69,7 @@ class Bus {
         } else {
             this.state = StateType.P;
             this.passenger = 0;
-            System.out.println("BUS is not race");
+            System.out.println(state.getName());
         }
    }
 }
