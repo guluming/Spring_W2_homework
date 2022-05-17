@@ -1,4 +1,4 @@
-import
+ import TaxiStateenumpkg.StateType;
 class Taxi {
     int taxiNumber;
     int fuel;
@@ -27,17 +27,6 @@ class Taxi {
     }
 
     public Taxi(int taxiNumber) {this(taxiNumber, 0, 0, 0, StateType.P, "", 1000, 0, 1500, 100,0);}
-
-    enum StateType{
-        R("운행중"), W("일반"), P("차고지행");
-        private final String name;
-        private StateType(String name){
-            this.name = name;
-            }
-        public String getName() {
-            return name;
-            }
-        }
 
     public StateType startOn(int fuel){
         if(fuel>=10){
