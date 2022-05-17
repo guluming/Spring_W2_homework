@@ -14,7 +14,7 @@ public class Main {
 //        taxi1.setSpeed(-2);
 
 
-        //System.out.println(Taxi.StateType.getName());
+        System.out.println("import 테스트 " + taxi1.state.getName());
         //System.out.println(taxi1.taxiNumber +"/"+ taxi1.fuel +"/"+ taxi1.speed +"/"+ taxi1.passenger +"/"+ taxi1.state +"/"+ taxi1.destination +"/"+ taxi1.basicDistance +"/"+ taxi1.destinationDistance +"/"+ taxi1.basicFare +"/"+ taxi1.distanceFare +"/"+ taxi1.totalFare);
     }
 }
